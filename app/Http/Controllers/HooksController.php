@@ -9,16 +9,14 @@ class HooksController extends Controller
 {
     public function message(Request $request)
     {
-        error_log($request);
-        // process request
-        /* $lines = explode('\n', $request['body']);
+        $lines = explode('\n', $request['body']);
         $report = [];
         foreach($lines as $line){
             $data = explode('::', $line);
             $report[$data[0]]  = $data[1];
         }
         Report::create($report);
-        return; */
+        return;
     }
 
     public function call(Request $call)
