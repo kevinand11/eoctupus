@@ -12,10 +12,11 @@ class ReportsController extends Controller
     public function __construct()
 	{
         $this->middleware('auth:api');
-	}
+    }
+
     public function index()
     {
-        return Report::paginate(50);
+        return Report::all();
     }
 
     public function store(ReportCreateRequest $request)

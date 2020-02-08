@@ -10,7 +10,7 @@ class CentresController extends Controller
 {
     public function index()
     {
-        return Centre::paginate(50);
+        return Centre::all();
     }
 
     public function store(CentreCreateRequest $request)

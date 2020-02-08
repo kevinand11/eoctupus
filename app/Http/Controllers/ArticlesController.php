@@ -10,7 +10,7 @@ class ArticlesController extends Controller
 {
     public function index()
     {
-        return Article::paginate(50);
+        return Article::all();
     }
 
     public function store(ArticleCreateRequest $request)
