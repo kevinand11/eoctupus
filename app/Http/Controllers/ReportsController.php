@@ -16,7 +16,7 @@ class ReportsController extends Controller
 
     public function index()
     {
-        return Report::all();
+        return Report::latest()->get();
     }
 
     public function store(ReportCreateRequest $request)

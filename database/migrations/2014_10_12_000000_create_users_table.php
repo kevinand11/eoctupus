@@ -19,10 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('phone')->unique();
             $table->longText('location');
-            $table->longText('remember_token');
-            $table->integer('sex');
+            $table->longText('remember_token')->nullable();
+            $table->integer('sex')->default(1);
             $table->integer('role')->default(0);
-            $table->json('account');
             $table->dateTime('birthdate');
             $table->timestamps();
         });

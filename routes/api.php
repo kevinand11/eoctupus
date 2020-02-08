@@ -8,7 +8,7 @@ Route::post('login', 'AuthController@login');
 Route::post('register', 'AuthController@register');
 Route::apiResources([
     'articles' => 'ArticlesController',
-    'cases' => 'CasesController',
+    'reports' => 'ReportsController',
     'centres' => 'CentresController',
     'users' => 'UsersController',
 ]);

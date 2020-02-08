@@ -10,7 +10,7 @@ class ArticlesController extends Controller
 {
     public function index()
     {
-        return Article::all();
+        return Article::latest()->get();
     }
 
     public function store(ArticleCreateRequest $request)

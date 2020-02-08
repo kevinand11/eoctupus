@@ -23,7 +23,7 @@ class AuthController extends Controller
     public function login(UserLoginRequest $request)
     {
         if(auth()->attempt(['phone' => $request['phone'], 'password' => $request['password']])){
-            return auth()->user()->remember_token;
+            return auth()->user();
         }
         return response()->json(['password' => trans('auth.failed')],400);
     }
