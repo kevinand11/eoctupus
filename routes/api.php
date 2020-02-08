@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-Route::get('user', 'AuthController@user');
-Route::post('message', 'AuthController@message');
+Route::get('user', 'HooksController@user');
+Route::post('message', 'HooksController@message');
 Route::post('call', 'AuthController@call');
 Route::post('login', 'AuthController@login');
 Route::post('register', 'AuthController@register');
