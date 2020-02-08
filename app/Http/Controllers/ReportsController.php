@@ -9,11 +9,6 @@ use App\Http\Requests\ReportCreateRequest;
 
 class ReportsController extends Controller
 {
-    public function __construct()
-	{
-        $this->middleware('auth:api');
-    }
-
     public function index()
     {
         return Report::latest()->get();

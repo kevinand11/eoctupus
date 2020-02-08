@@ -9,11 +9,6 @@ use App\Http\Requests\UserCreateRequest;
 
 class AuthController extends Controller
 {
-    public function __construct()
-	{
-        $this->middleware('auth:api')->only(['user']);
-    }
-
     public function user()
     {
         return auth()->user();
