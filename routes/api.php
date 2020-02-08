@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 Route::get('user', 'AuthController@user');
+Route::post('message', 'AuthController@message');
+Route::post('call', 'AuthController@call');
 Route::post('login', 'AuthController@login');
 Route::post('register', 'AuthController@register');
 Route::apiResources([
