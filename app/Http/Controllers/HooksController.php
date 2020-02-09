@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\Report;
 
@@ -13,10 +14,23 @@ class HooksController extends Controller
         $report = [];
         foreach($lines as $line){
             $data = explode('::', $line);
-            $report[$data[0]]  = $data[1];
+            if(count($data) > 0){
+                $report[$data[0]]  = $data[1];
+            }
         }
-        Report::create($report);
-        return;
+        $validator = Validator::make($report, [
+            'user_id' => 'required|integer',
+            'carrier_number' => 'required|string',
+            'plate_number' => 'required|string',
+            'location' => 'required|string',
+            'description' => 'sometimes|string',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        return Report::create($report);
     }
 
     public function call(Request $call)
