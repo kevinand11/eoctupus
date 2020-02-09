@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 Route::get('/', function () {
-    return view('welcome');
+    return response()->file(public_path('build/index.html'));
 });
 
 Route::match(
